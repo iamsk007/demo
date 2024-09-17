@@ -4,21 +4,22 @@ on:
   push:
     branches:
       - main
+env:          
+  SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
 
+  
 jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         # uses: actions/checkout@v2
-        run: echo "hello world"
+        run: echo "hello world $SSH_USERNAME"
         
 
       - name: Print SSH Username
         run: |
           echo "SSH Username: ${{ secrets.SSH_USERNAME }}"
-        env:
-          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
 
       # - name: Deploy HTML file
       #   run: |

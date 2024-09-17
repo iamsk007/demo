@@ -17,5 +17,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: "**.html"
           target: "/iamgak/demo/"
-          remote_dir: "/iamgak/demo/"
           verbose: true

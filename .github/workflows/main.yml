@@ -16,9 +16,9 @@ jobs:
       - name: Build HTML file
         run: |
           node -v
-          # echo "<h1>Hello, World!</h1>" > index.html
+          # echo "<h1>Hello, World! {{ secrets.SSH_USERNAME }}</h1>" > index.html
         env:
-          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
 
       # - name: Deploy HTML file
       #   run: |

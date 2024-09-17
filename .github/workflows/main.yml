@@ -16,6 +16,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           source: "**.html"
-          target: "/var/www/html/your-project-folder"
-          remote_dir: "/var/www/html"
+          target: "/iamgak/demo/"
+          remote_dir: "/iamgak/demo/"
           verbose: true

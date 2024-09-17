@@ -12,15 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy HTML files
-        uses: appleboy/scp-action@master
-        with:
-          host:  iamgak@${{ secrets.HOST_IP }}
-          username:  iamgak
-          key: ${{ secrets.SSH_KEY }}
-          target: "/home/iamgak/demo"
-          verbose: true
-          overwrite: true
-          source: "."
-          port: 22
-          debug: true
+      - name: Build HTML file
+        run: |
+          echo "<h1>Hello, World!</h1>" > index.html
+
+      - name: Deploy HTML file
+        run: |
+          rsync -avz --delete ./ iamgak@${{ secrets.HOST_IP }}:/home/iamgak/demo
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+        shell: bash

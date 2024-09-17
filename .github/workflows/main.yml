@@ -10,15 +10,17 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        # uses: actions/checkout@v2
+        run: echo "hello world"
 
       - name: Build HTML file
         run: |
-          echo "<h1>Hello, World!</h1>" > index.html
+          node -v
+          # echo "<h1>Hello, World!</h1>" > index.html
 
-      - name: Deploy HTML file
-        run: |
-          rsync -avz --delete ./ iamgak@${{ secrets.HOST_IP }}:/home/iamgak/demo
-        env:
-          SSH_KEY: ${{ secrets.SSH_KEY }}
-        shell: bash
+      # - name: Deploy HTML file
+      #   run: |
+      #     rsync -avz --delete ./ iamgak@${{ secrets.HOST_IP }}:/home/iamgak/demo
+      #   env:
+      #     SSH_KEY: ${{ secrets.SSH_KEY }}
+      #   shell: bash

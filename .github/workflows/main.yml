@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Deploy HTML files
         uses: appleboy/scp-action@master
@@ -18,3 +18,4 @@ jobs:
           source: "**.html"
           target: "/iamgak/demo/"
           verbose: true
+          overwrite: true

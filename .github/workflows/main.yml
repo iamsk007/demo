@@ -15,7 +15,7 @@ jobs:
 
       - name: Build HTML file
         run: |
-          node -v
+          # node -v
           echo "<h1>Hello, World! {{ secrets.SSH_USERNAME }}</h1>" 
         env:
           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}

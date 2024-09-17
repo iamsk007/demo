@@ -12,9 +12,11 @@ jobs:
       - name: Checkout code
         # uses: actions/checkout@v2
         run: echo "hello world"
+        
 
-      - name: Build HTML file
-        run: echo "<h1>Hello, World! {{ secrets.SSH_USERNAME }}</h1>" 
+      - name: Print SSH Username
+        run: |
+          echo "SSH Username: ${{ secrets.SSH_USERNAME }}"
         env:
           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
 

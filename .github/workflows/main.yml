@@ -17,6 +17,8 @@ jobs:
         run: |
           node -v
           # echo "<h1>Hello, World!</h1>" > index.html
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
 
       # - name: Deploy HTML file
       #   run: |
